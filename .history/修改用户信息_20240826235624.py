@@ -59,7 +59,7 @@ def get_location(address):
             if retry>=3:
                 print('获取经纬度失败(考虑可能cookie过期)，请手动输入经纬度')
                 #中控科技园
-                return input('请输入经纬度（如：）:中控科技园,120.14,30.18')
+                return input('请输入经纬度（如：）中控科技园,120.14,30.18')
             
 
 

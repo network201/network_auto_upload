@@ -194,8 +194,8 @@ def get_answer(content):
                     
                 }
             header = {
-                #"Authorization": "Bearer BuZeadhhZCFszliYFeop:JGGXxBKQzXGWpkKdkQSl" # 注意此处替换自己的APIPassword
-                "Authorization": "Bearer dClJzxFeraWMBTBIUDPI:jJWoiNfxPSWNGjmeWYnI"
+                "Authorization": "Bearer BuZeadhhZCFszliYFeop:JGGXxBKQzXGWpkKdkQSl" # 注意此处替换自己的APIPassword
+                "Authorization": "dClJzxFeraWMBTBIUDPI:jJWoiNfxPSWNGjmeWYnI"
             }
             response = requests.post(url, headers=header, json=data)
             # print(response.text)
@@ -256,8 +256,7 @@ def get_pic_path(img_path,login_info):
         url = 'http://wdsj.3enetwork.cn/practice/practice-manage/diaries-student?fInternshipInfoId=b3d8addf72194399b08aaaf17685ef93&fInternshipStudentId=608d714d76cb41c0b715f5724655a0f4&fTemplateBatchInfoId=70169adeec1544bca61be93cfb52aa7b&fIsNeedDiaryReview1=1&fIsNeedDiaryReview2=1&_pageHeader=%E4%B8%93%E4%B8%9A%E5%AE%9E%E4%B9%A0-21%E7%BA%A7&fType=3'
 
         edge_options = Options()
-        #需要替换成自己的
-        user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0'
+        user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0'
         edge_options.add_argument(f'user-agent={user_agent}')
         edge_options.add_argument('--headless')
         edge_options.add_argument('--disable-gpu') 
@@ -391,12 +390,6 @@ def get_location(address):
                 return input('请输入经纬度（如：）：虹软大厦,30.192639,120.206354')
             
 
-# 读取配置文件
-def load_config(filename):
-    with open(filename, 'r', encoding='utf-8') as file:
-        config = json.load(file)
-    return config
-
 
 if __name__=='__main__':
     with open('user_fixation.json','r',encoding='utf-8') as f:
@@ -418,27 +411,18 @@ if __name__=='__main__':
 
     diary_dic_detial=get_diary_detail(id,header)
 
-    # # diary_name='曾振铭20240819'
-    # # work_time='2024/08/19'
-    # # work_place="虹软大厦,30.192639,120.206354"
-    
-    # diary_name=input('请输入日志名称（如：xxx20240827）：')
-    # work_time=input('请输入日志日期（如：2024/08/27）：')
-    
-    # # work_place=get_location(input('请输入日志地址（如：杭州市滨江虹软）：'))
-    
-    # 从配置文件中读取信息
-    config = load_config('user_log.json')
-    diary_name = config['diary_name']
-    work_time = config['work_time']
-    content = config['content']
-    dir_img_path = config['dir_img_path']
-    
+    # diary_name='曾振铭20240819'
+    # work_time='2024/08/19'
+    # work_place="虹软大厦,30.192639,120.206354"
+    diary_name=input('请输入日志名称（如：xxx20240827）：')
+    work_time=input('请输入日志日期（如：2024/08/27）：')
     work_place=user_fixation['location']
+    # work_place=get_location(input('请输入日志地址（如：杭州市滨江虹软）：'))
+    
     diary_base_info=[diary_name,work_time,work_place]
 
-    # content=input('请输入需要填充日志内容：')
-    # dir_img_path=input('请输入实习图片路径或者图片文件夹路径：')
+    content=input('请输入需要填充日志内容：')
+    dir_img_path=input('请输入实习图片路径或者图片文件夹路径：')
     
     ai_answer=get_all_answer(content,user_fixation['name'])
 

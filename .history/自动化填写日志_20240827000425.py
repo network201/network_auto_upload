@@ -33,7 +33,7 @@ def get_user_parm(header):
 
     res=requests.get(url,headers=header)
 
-    print(res.text)
+    # print(res.text)
     data=json.loads(res.text)
 
     user_parm={}
@@ -133,11 +133,11 @@ def write_diary(id,header,user_parm,diary_dic_detial,ai_answer_dic,diary_base_in
 
     :return:
     '''
-#     header={
+     header={
 
-#     'cookie':'Hm_lvt_085e0fa100dbc0e0e42931c16bf3e9e6=1723085957; HMACCOUNT=55597F704F1409F2; _AuthSubAccountSystem=LZCXn3k4UHRvFC1QaP2q2VmhqMAmWbAu0+Y5ev9UKwdCTtzEwNJB7giFOyZBD5118Dt2+qeXse5Z5fHLSVF+Lm+PT83rclII44gHvW4e654=; Hm_lpvt_085e0fa100dbc0e0e42931c16bf3e9e6=1724056764',
+     'cookie':'Hm_lvt_085e0fa100dbc0e0e42931c16bf3e9e6=1723085957; HMACCOUNT=55597F704F1409F2; _AuthSubAccountSystem=LZCXn3k4UHRvFC1QaP2q2VmhqMAmWbAu0+Y5ev9UKwdCTtzEwNJB7giFOyZBD5118Dt2+qeXse5Z5fHLSVF+Lm+PT83rclII44gHvW4e654=; Hm_lpvt_085e0fa100dbc0e0e42931c16bf3e9e6=1724056764',
 
-# }
+ }
 
     data={"cDiaryName":diary_base_info[0],
         #   "templateIdFormItemIdMapJSON":"{\"972f3a6fda32442b8aaaca4b84d7df5f\":\"7cb555c6ff964eec93559b330544c0f4\",\"c026f4cbc6be4f679b495107fe4ef503\":\"84fc86c267c44c539e7ee845c3a36ebf\",\"953818a79c5f41bca3df0db444dabb7c\":\"88a3005876844c539143a6cd9fe5fc9b\",\"ebc40620c9dc4575b9192b316813288c\":\"76346d223bab46d7b1cf05bd5c71f02b\",\"4ac401eb11934f89be71129ff017ff23\":\"b0f5edba51c243d8ae162b6912a36ef8\",\"84bf928255f74634bccb39b691149d44\":\"351265fb48ef4a799d0f18c81b0de379\",\"99882750f0c347e19ae4da8bea4a45c0\":\"0323981ce4fd4e8ea222c925bfabbb06\",\"cf365fe1ad5b4d4792c5a8578bbda5ce\":\"80ec214af3694fd0af482fe4ea950d9d\",\"67354e1880574dab8d0bba189e4d9fff\":\"8f8c5cd08ceb42a0aef13d19d6f295d7\",\"e292ff9ce8b54050a8bac3e42d4a160d\":\"2d01669c825d4a6fa50e8c41ecec6966\",\"3de6e7bf3ba842d082df8dcf026e0cbd\":\"6cc56eec0b604d3aba2034f8ec92c66e\",\"8efb68bac013461b8d2f97d2836e6dd5\":\"c8ddef4c100e4740967086084ea83a0e\",\"4dbb1547d8db47fab8db4be0270e5600\":\"c9b1bacd2f2342b6839e627610f83da7\"}",
@@ -195,7 +195,7 @@ def get_answer(content):
                 }
             header = {
                 #"Authorization": "Bearer BuZeadhhZCFszliYFeop:JGGXxBKQzXGWpkKdkQSl" # 注意此处替换自己的APIPassword
-                "Authorization": "Bearer dClJzxFeraWMBTBIUDPI:jJWoiNfxPSWNGjmeWYnI"
+                "Authorization": "MGZhYWNhOGI0MzFhMjA0ZjgzMjEzYzk3"
             }
             response = requests.post(url, headers=header, json=data)
             # print(response.text)
@@ -218,8 +218,8 @@ def get_all_answer(content,name):
     :return:所有信息的回答
     '''
     print('正在获取所有的信息并ai回答...')
-    #content='今天完成了两个脚本需求，和一部分的爬虫内容。\n第一个脚本，从需求分析到脚本开发测试一共花了大概3小时\n第二个脚本，是一个小需求将目标文件夹中的图片筛选并移动。\n爬虫脚本开发部分，目前完成了需求分析，了解了整体的爬取思路；并完成了目标整体商品url的爬取。还缺少商品详细商品图片以及相关推荐爬取。\n体会到了，当一个需求很急切的时候的内心急躁感。'
-    #data='工作任务与内容（）;相关人员（）;工作要点记录（）;相关讨论与资料（）;主要问题（）;下步计划（）;主要风险（）;工作体会（）;'
+    content='今天完成了两个脚本需求，和一部分的爬虫内容。\n第一个脚本，从需求分析到脚本开发测试一共花了大概3小时\n第二个脚本，是一个小需求将目标文件夹中的图片筛选并移动。\n爬虫脚本开发部分，目前完成了需求分析，了解了整体的爬取思路；并完成了目标整体商品url的爬取。还缺少商品详细商品图片以及相关推荐爬取。\n体会到了，当一个需求很急切的时候的内心急躁感。'
+    data='工作任务与内容（）;相关人员（）;工作要点记录（）;相关讨论与资料（）;主要问题（）;下步计划（）;主要风险（）;工作体会（）;'
     keyword=['工作任务与内容','相关人员','工作要点记录','相关讨论与资料','主要问题','下步计划','主要风险','工作体会','导师评价和建议']
     value_dict={
         '工作任务与内容':'请你告诉我详细的工作任务与内容，不要分段，一段内容，详细回答',
@@ -256,8 +256,7 @@ def get_pic_path(img_path,login_info):
         url = 'http://wdsj.3enetwork.cn/practice/practice-manage/diaries-student?fInternshipInfoId=b3d8addf72194399b08aaaf17685ef93&fInternshipStudentId=608d714d76cb41c0b715f5724655a0f4&fTemplateBatchInfoId=70169adeec1544bca61be93cfb52aa7b&fIsNeedDiaryReview1=1&fIsNeedDiaryReview2=1&_pageHeader=%E4%B8%93%E4%B8%9A%E5%AE%9E%E4%B9%A0-21%E7%BA%A7&fType=3'
 
         edge_options = Options()
-        #需要替换成自己的
-        user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0'
+        user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0'
         edge_options.add_argument(f'user-agent={user_agent}')
         edge_options.add_argument('--headless')
         edge_options.add_argument('--disable-gpu') 
@@ -391,12 +390,6 @@ def get_location(address):
                 return input('请输入经纬度（如：）：虹软大厦,30.192639,120.206354')
             
 
-# 读取配置文件
-def load_config(filename):
-    with open(filename, 'r', encoding='utf-8') as file:
-        config = json.load(file)
-    return config
-
 
 if __name__=='__main__':
     with open('user_fixation.json','r',encoding='utf-8') as f:
@@ -418,27 +411,18 @@ if __name__=='__main__':
 
     diary_dic_detial=get_diary_detail(id,header)
 
-    # # diary_name='曾振铭20240819'
-    # # work_time='2024/08/19'
-    # # work_place="虹软大厦,30.192639,120.206354"
-    
-    # diary_name=input('请输入日志名称（如：xxx20240827）：')
-    # work_time=input('请输入日志日期（如：2024/08/27）：')
-    
-    # # work_place=get_location(input('请输入日志地址（如：杭州市滨江虹软）：'))
-    
-    # 从配置文件中读取信息
-    config = load_config('user_log.json')
-    diary_name = config['diary_name']
-    work_time = config['work_time']
-    content = config['content']
-    dir_img_path = config['dir_img_path']
-    
+    # diary_name='曾振铭20240819'
+    # work_time='2024/08/19'
+    # work_place="虹软大厦,30.192639,120.206354"
+    diary_name=input('请输入日志名称（如：刘骏飞20240819）：')
+    work_time=input('请输入日志日期（如：2024/08/19）：')
     work_place=user_fixation['location']
+    # work_place=get_location(input('请输入日志地址（如：杭州市滨江虹软）：'))
+    
     diary_base_info=[diary_name,work_time,work_place]
 
-    # content=input('请输入需要填充日志内容：')
-    # dir_img_path=input('请输入实习图片路径或者图片文件夹路径：')
+    content=input('请输入需要填充日志内容：')
+    dir_img_path=input('请输入实习图片路径或者图片文件夹路径：')
     
     ai_answer=get_all_answer(content,user_fixation['name'])
 

@@ -59,14 +59,14 @@ def get_location(address):
             if retry>=3:
                 print('获取经纬度失败(考虑可能cookie过期)，请手动输入经纬度')
                 #中控科技园
-                return input('请输入经纬度（如：）:中控科技园,120.14,30.18')
+                return input('请输入经纬度（如：）：中控科技园：120.14,30.18')
             
 
 
 
 if __name__ == '__main__':
     # 输入用户名、密码、cookie、地址
-    #曾振铭、19947959729、king200395、W4zzIYApZ67M8gWdIF7LGOO8ht2zEQyKmRPd0152d22xhVPSCfNmX0gxOLXeaPc19ufMRg+PAckugTqEI7vOVHUO1arbGVPf8gRPt4sxyJM=、120.14,30.18
+    
     name=input('请输入你的姓名（实习日志生成使用）：')
     username=input('请输入用户名：')
     password=input('请输入密码：')

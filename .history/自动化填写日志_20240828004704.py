@@ -418,27 +418,18 @@ if __name__=='__main__':
 
     diary_dic_detial=get_diary_detail(id,header)
 
-    # # diary_name='曾振铭20240819'
-    # # work_time='2024/08/19'
-    # # work_place="虹软大厦,30.192639,120.206354"
-    
+    # diary_name='曾振铭20240819'
+    # work_time='2024/08/19'
+    # work_place="虹软大厦,30.192639,120.206354"
     # diary_name=input('请输入日志名称（如：xxx20240827）：')
     # work_time=input('请输入日志日期（如：2024/08/27）：')
-    
+    # work_place=user_fixation['location']
     # # work_place=get_location(input('请输入日志地址（如：杭州市滨江虹软）：'))
     
-    # 从配置文件中读取信息
-    config = load_config('user_log.json')
-    diary_name = config['diary_name']
-    work_time = config['work_time']
-    content = config['content']
-    dir_img_path = config['dir_img_path']
-    
-    work_place=user_fixation['location']
     diary_base_info=[diary_name,work_time,work_place]
 
-    # content=input('请输入需要填充日志内容：')
-    # dir_img_path=input('请输入实习图片路径或者图片文件夹路径：')
+    content=input('请输入需要填充日志内容：')
+    dir_img_path=input('请输入实习图片路径或者图片文件夹路径：')
     
     ai_answer=get_all_answer(content,user_fixation['name'])
 

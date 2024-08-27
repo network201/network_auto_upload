@@ -1,0 +1,6 @@
+{
+    "terminal.explorerKind": "integrated",
+    "files.watcherExclude": {
+        "**/target": true
+    }
+}

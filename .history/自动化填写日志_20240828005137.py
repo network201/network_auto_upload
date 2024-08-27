@@ -418,9 +418,9 @@ if __name__=='__main__':
 
     diary_dic_detial=get_diary_detail(id,header)
 
-    # # diary_name='曾振铭20240819'
-    # # work_time='2024/08/19'
-    # # work_place="虹软大厦,30.192639,120.206354"
+    # diary_name='曾振铭20240819'
+    # work_time='2024/08/19'
+    # work_place="虹软大厦,30.192639,120.206354"
     
     # diary_name=input('请输入日志名称（如：xxx20240827）：')
     # work_time=input('请输入日志日期（如：2024/08/27）：')
